@@ -1,0 +1,485 @@
+/* Estilos generales para las cartas */
+.carta-agendamiento, .carta-citas {
+    border: 2px solid #ddd; /* Borde inicial */
+    height: 200px;
+    width: 500px;
+    margin-bottom: 32px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between; /* Separa el contenido y el ícono */
+    align-items: center; /* Centra verticalmente */
+    text-align: left;
+    border-radius: 32px;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transición suave */
+    cursor: pointer; /* Cambia el cursor al pasar sobre la carta */
+    margin-top: -20px;
+}
+
+.carta-agendamiento:hover, .carta-citas:hover {
+    border-color: #14B8C0; /* Borde naranja al pasar el mouse */
+    box-shadow: 0 4px 8px rgba(245, 124, 0, 0.2); /* Sombra naranja */
+}
+
+.carta-agendamiento.seleccionada, .carta-citas.seleccionada {
+    border-color: #14B8C0; /* Borde naranja al seleccionar */
+    box-shadow: 0 4px 8px rgba(245, 124, 0, 0.2); /* Sombra naranja */
+}
+
+.contenido {
+    flex: 1; /* Ocupa el espacio disponible */
+}
+
+
+
+.boton-continuar .btn:hover {
+    background-color: #0f8a8f; /* Cambia el color al pasar el mouse */
+}
+
+/* Estilos para las animaciones y transiciones */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+/* Estilos para el botón continuar */
+.btn.activo {
+    background-color: #14B8C0;
+    box-shadow: 0 4px 8px rgba(20, 184, 192, 0.3);
+}
+
+.btn:not(.activo) {
+    background-color: #a8a8a8;
+    cursor: not-allowed;
+}
+
+/* Estilos generales para las cartas */
+.carta-agendamiento, .carta-citas {
+    border: 2px solid #e0e0e0;
+    background-color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin: 15px auto;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.carta-agendamiento:hover, .carta-citas:hover {
+    border-color: #14B8C0;
+    box-shadow: 0 8px 15px rgba(20, 184, 192, 0.15);
+    transform: translateY(-5px);
+}
+
+.carta-agendamiento.seleccionada, .carta-citas.seleccionada {
+    border-color: #14B8C0;
+    box-shadow: 0 8px 20px rgba(20, 184, 192, 0.2);
+    transform: translateY(-5px);
+}
+
+.carta-agendamiento.seleccionada:before, .carta-citas.seleccionada:before {
+    content: "✓";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #14B8C0;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.contenido {
+    flex: 1;
+    padding-right: 15px;
+}
+
+.contenido h3 {
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.contenido p {
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 0;
+    font-size: 15px;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    background-color: #f0f9fa;
+    color: #14B8C0;
+    transition: all 0.3s ease;
+}
+
+.carta-agendamiento:hover .icon-container,
+.carta-citas:hover .icon-container,
+.carta-agendamiento.seleccionada .icon-container,
+.carta-citas.seleccionada .icon-container {
+    background-color: #14B8C0;
+    color: white;
+    transform: rotate(10deg);
+}
+
+/* Estilos para el botón Continuar */
+.boton-continuar-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 40px;
+    width: 100%;
+}
+
+.boton-continuar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 20px 0 40px;
+}
+
+.boton-continuar .btn {
+    padding: 12px 35px;
+    font-size: 18px;
+    background-color: #14B8C0;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(20, 184, 192, 0.2);
+}
+
+.boton-continuar .btn:hover {
+    background-color: #0f8a8f;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(20, 184, 192, 0.3);
+}
+
+.boton-continuar .btn:not(.activo) {
+    background-color: #b0b0b0;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Media queries for responsive button */
+@media (max-width: 768px) {
+    .boton-continuar .btn {
+        padding: 10px 30px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .boton-continuar .btn {
+        padding: 8px 25px;
+        font-size: 15px;
+        width: 80%;
+        max-width: 250px;
+    }
+    
+    .boton-continuar {
+        margin: 15px 0 30px;
+    }
+}
+
+@media (max-width: 375px) {
+    .boton-continuar .btn {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Animaciones mejoradas */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .carta-agendamiento, .carta-citas {
+        width: 100%;
+        margin: 15px auto;
+        height: auto;
+        min-height: 150px;
+    }
+    
+    .contenido h3 {
+        font-size: 20px;
+    }
+    
+    .contenido p {
+        font-size: 14px;
+    }
+    
+    .icon-container {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .icon-container i {
+        font-size: 24px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .carta-agendamiento, .carta-citas {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 15px;
+        height: auto;
+    }
+    
+    .contenido {
+        padding-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .icon-container {
+        margin-top: 10px;
+    }
+    
+    .carta-agendamiento.seleccionada:before, .carta-citas.seleccionada:before {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .boton-continuar .btn {
+        width: 100%;
+        padding: 12px 20px;
+    }
+}
+
+
+/* Base styles - keeping your original styles */
+.formulario {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    min-height: 320px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.formulario-2 {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    min-height: 320px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto 80px auto;
+}
+
+.formulario-2 h5,
+.formulario h5 {
+    margin-bottom: 15px;
+    color: #14B8C0;
+    font-size: 35px;
+    font-weight: bolder;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.campo label,
+.especie label {
+    font-weight: bold;
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #14B8C0;
+}
+
+.campo input,
+.especie select,
+#fecha {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+    width: 100%;
+}
+
+.campo input:focus,
+.especie select:focus,
+#fecha:focus {
+    border-color: #1f3c88;
+    box-shadow: 0px 0px 8px rgba(31, 60, 136, 0.5);
+    outline: none;
+}
+
+.telefono {
+    display: flex;
+    width: 100%;
+}
+
+.telefono input {
+    width: 100%;
+    border-radius: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+}
+
+.telefono input:focus {
+    border-color: #1f3c88;
+    box-shadow: 0px 0px 8px rgba(31, 60, 136, 0.5);
+    outline: none;
+}
+
+.especie {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 992px) {
+    .formulario,
+    .formulario-2 {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .formulario h5,
+    .formulario-2 h5 {
+        font-size: 28px;
+    }
+    
+    .campo label,
+    .especie label {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    .formulario,
+    .formulario-2 {
+        padding: 15px;
+    }
+    
+    .formulario h5,
+    .formulario-2 h5 {
+        font-size: 24px;
+    }
+    
+    .campo label,
+    .especie label {
+        font-size: 16px;
+    }
+    
+    .campo,
+    .especie {
+        margin-bottom: 20px;
+    }
+    
+    .campo input,
+    .especie select,
+    #fecha,
+    .telefono input {
+        padding: 8px;
+        font-size: 13px;
+    }
+}
+
+/* Container adjustments */
+#paso-4-seleccion-formulario,
+#paso-5-seleccion-formulario {
+    width: 100%;
+    padding: 0 15px;
+}
+
+/* Adjustments for Bootstrap columns */
+@media (max-width: 768px) {
+    #paso-4-seleccion-formulario .col,
+    #paso-5-seleccion-formulario .col {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
