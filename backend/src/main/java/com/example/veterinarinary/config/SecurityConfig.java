@@ -33,8 +33,8 @@ public class SecurityConfig {
                     "/api/v1/public/users/register",
                     "/api/v1/public/users/login",
                     "/api/recovery-requests/create",
-                    "/password-email/sendTestEmail/franciscoandradebermeo560@gmail.com",
-                    "/password-email/forgotPassword/franciscoandradebermeo560@gmail.com",
+                    "/password-email/sendTestEmail/**",
+                    "/password-email/forgotPassword/**",
                     "/password/reset"
                 ).permitAll()
 
