@@ -15,14 +15,14 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.example.veterinarinary.jwt.JwtAuthFilter;
+import com.example.veterinarinary.jwt.JwtAuthenticationFilter;
 import com.example.veterinarinary.repository.IUser;
 
 @Configuration
 public class SecurityConfig {
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http, JwtAuthFilter jwtAuthFilter) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http, JwtAuthenticationFilter JwtAuthenticationFilter) throws Exception {
         http
             .csrf(csrf -> csrf.disable())
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
@@ -32,7 +32,10 @@ public class SecurityConfig {
                 .requestMatchers(
                     "/api/v1/public/users/register",
                     "/api/v1/public/users/login",
-                    "/api/recovery-requests/create"
+                    "/api/recovery-requests/create",
+                    "/password-email/sendTestEmail/franciscoandradebermeo560@gmail.com",
+                    "/password-email/forgotPassword/franciscoandradebermeo560@gmail.com",
+                    "/password/reset"
                 ).permitAll()
 
                 // Endpoints de gestión de usuarios (solo ADMIN)
@@ -109,7 +112,7 @@ public class SecurityConfig {
                 // Cualquier otra petición requiere autenticación
                 .anyRequest().authenticated()
             );
-        http.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+        http.addFilterBefore(JwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
 
